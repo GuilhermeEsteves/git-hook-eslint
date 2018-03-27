@@ -1,0 +1,18 @@
+{
+  "author": "",
+  "name": "git-hook-eslint",
+  "main": "index.js",
+  "description": "The utilization allow the automatic execution from lint validating the commit",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/GuilhermeEsteves/git-hook-eslint",
+  "repository": {
+    "url": "https://github.com/GuilhermeEsteves/git-hook-eslint"
+  },
+  "peerDependencies": {
+    "eslint": "^4.1.1"
+  },
+  "scripts": {
+    "postinstall": "node ./index.js"
+  }
+}
