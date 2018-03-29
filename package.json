@@ -14,5 +14,15 @@
   },
   "scripts": {
     "postinstall": "node ./index.js"
-  }
+  },
+  "keywords": [
+    "node",
+    "git",
+    "eslint",
+    "lint",
+    "hooks",
+    "commit",
+    "conventional commit",
+    "commit convention"
+  ]
 }

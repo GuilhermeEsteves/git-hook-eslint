@@ -8,6 +8,19 @@
 
 `npm install git-hook-eslint --save-dev`
 
+## Usage
+
+When executed the *git commit* command your changed files will be parsed by EsLint automaticly.
+
+```bash
+git commit -m "Adding new features"
+```
+
+If you want for a moment to ignore EsLint (don't do this) is possibly passing a "command" with the commit message.
+
+```bash
+git commit -m "Adding new features [ignore-lint]"
+```
 
 ## Default Eslintrc
 
