@@ -31,7 +31,7 @@ function writeFile(raw, target) {
 function checkFile() {
   for (let i = 0; i < ESLINT_FILE_NAMES_SEARCH.length; i++) {
     try {
-      fs.statSync(ESLINT_SOURCE + ESLINT_FILE_NAMES_SEARCH[i]);
+      fs.statSync(`${ESLINT_SOURCE}/${ESLINT_FILE_NAMES_SEARCH[i]}`);
       return true;
     } catch (error) {
       continue;
