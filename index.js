@@ -6,7 +6,9 @@ const ESLINT_FILE = './eslintrc.txt';
 const root = path.resolve(__dirname, '..', '..');
 const hookDir = path.resolve(root, '.git', './hooks');
 
-const ESLINT_FILE_TARGET = path.resolve(root, './.eslintrc');
+const ESLINT_SOURCE = path.resolve(root, './');
+const ESLINT_FILE_PATH = `${ESLINT_SOURCE}/.eslintrc`;
+const ESLINT_FILE_NAMES_SEARCH = ['.eslintrc', '.eslintrc.js', '.eslintrc.yaml'];
 
 function readFile(filename) {
   return new Promise((resolve, reject) => {
@@ -26,24 +28,24 @@ function writeFile(raw, target) {
   });
 }
 
-function checkFile(target) {
-  return new Promise((resolve, reject) => {
-    fs.stat(target, (err) => {
-      if (err) return reject(err);
-      resolve();
-    });
-  });
+function checkFile() {
+  for (let i = 0; i < ESLINT_FILE_NAMES_SEARCH.length; i++) {
+    try {
+      fs.statSync(ESLINT_SOURCE + ESLINT_FILE_NAMES_SEARCH[i]);
+      return true;
+    } catch (error) {
+      continue;
+    }
+  }
+  return false;
 }
 
 readFile(COMMITMSG_FILE)
   .then(raw => writeFile(raw, `${hookDir}/commit-msg`))
   .then(() => console.log('Git commit-msg set up success!'))
-  .catch(e => console.log(`Git commit-msg set up fail due to: ${e}`))
+  .catch(e => console.log(`Git commit-msg set up fail due to: ${e}`));
 
-checkFile(ESLINT_FILE_TARGET)
-  .catch(() => {
-    return readFile(ESLINT_FILE)
-      .then(raw => writeFile(raw, ESLINT_FILE_TARGET));
-  })
-  .then(() => console.log('Eslintrc set up success!'))
-  .catch(e => console.log(`Eslintrc set up fail due to: ${e}`));
+if (!checkFile()) {
+  readFile(ESLINT_FILE)
+    .then(raw => writeFile(raw, ESLINT_FILE_PATH));
+}
