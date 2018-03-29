@@ -1,6 +1,6 @@
 # git-hook-eslint
 
-[![version](https://img.shields.io/github/release/GuilhermeEsteves/git-hook-eslint.svg?style=flat-square)]
+![version](https://img.shields.io/github/release/GuilhermeEsteves/git-hook-eslint.svg?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/git-hook-eslint.svg)
 
 
