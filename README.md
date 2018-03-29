@@ -1,7 +1,7 @@
 # git-hook-eslint
 
-[![version](https://img.shields.io/github/release/GuilhermeEsteves/git-hook-eslint.svg?style=flat-square)](https://github.com/GuilhermeEsteves/git-hook-eslint/releases)![downloads](https://img.shields.io/github/downloads/GuilhermeEsteves/git-hook-eslint/total.svg?style=flat-square)
-(https://img.shields.io/npm/dt/git-hook-eslint.svg)![npm]
+[![version](https://img.shields.io/github/release/GuilhermeEsteves/git-hook-eslint.svg?style=flat-square)]
+![npm](https://img.shields.io/npm/dt/git-hook-eslint.svg)
 
 
 **git-hook-eslint** The utilization allow the automatic execution from lint validating the commit
