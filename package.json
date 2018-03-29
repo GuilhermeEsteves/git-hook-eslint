@@ -3,7 +3,7 @@
   "name": "git-hook-eslint",
   "main": "index.js",
   "description": "The utilization allow the automatic execution from lint validating the commit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "homepage": "https://github.com/GuilhermeEsteves/git-hook-eslint",
   "repository": {
